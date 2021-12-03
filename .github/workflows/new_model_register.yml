@@ -14,7 +14,7 @@ jobs:
       - name: torchserve start
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.REMOTE_IP }}
+          host: ${{ secrets.REMOTE_SSH_IP }}
           username: ${{ secrets.REMOTE_SSH_ID }}
           key: ${{ secrets.REMOTE_SSH_PASSWORD }}
           port: ${{ secrets.REMOTE_SSH_PORT }}
@@ -28,7 +28,7 @@ jobs:
         # ssh에 잘 접속했는지 확인하기
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.REMOTE_IP }}
+          host: ${{ secrets.REMOTE_SSH_IP }}
           username: ${{ secrets.REMOTE_SSH_ID }}
           key: ${{ secrets.REMOTE_SSH_PASSWORD }}
           port: ${{ secrets.REMOTE_SSH_PORT }}
@@ -47,7 +47,7 @@ jobs:
         # 마찬가지로 확인할 것
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.REMOTE_IP }}
+          host: ${{ secrets.REMOTE_SSH_IP }}
           username: ${{ secrets.REMOTE_SSH_ID }}
           key: ${{ secrets.REMOTE_SSH_PASSWORD }}
           port: ${{ secrets.REMOTE_SSH_PORT }}
