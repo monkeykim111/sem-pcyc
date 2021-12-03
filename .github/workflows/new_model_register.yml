@@ -19,7 +19,7 @@ jobs:
           password: ${{ secrets.REMOTE_SSH_PASSWORD }}
           port: ${{ secrets.REMOTE_SSH_PORT }}
           script: |
-            source activate pytorch_p36
+            # source activate pytorch_p36
             cd /home/ubuntu/projects_jonathan
             pwd
             # sem_pcyc.mar의 버전 확인할 것
@@ -31,7 +31,7 @@ jobs:
 #         with:
 #           host: ${{ secrets.REMOTE_SSH_IP }}
 #           username: ${{ secrets.REMOTE_SSH_ID }}
-#           key: ${{ secrets.REMOTE_SSH_PASSWORD }}
+#           password: ${{ secrets.REMOTE_SSH_PASSWORD }}
 #           port: ${{ secrets.REMOTE_SSH_PORT }}
 #           script: |
 #             source activate pytorch_p36
@@ -50,7 +50,7 @@ jobs:
 #         with:
 #           host: ${{ secrets.REMOTE_SSH_IP }}
 #           username: ${{ secrets.REMOTE_SSH_ID }}
-#           key: ${{ secrets.REMOTE_SSH_PASSWORD }}
+#           password: ${{ secrets.REMOTE_SSH_PASSWORD }}
 #           port: ${{ secrets.REMOTE_SSH_PORT }}
 #           script: |
 #             scp -i ./.pem /home/ubuntu/projects_jonathan/model-store/sem_pcyc3.0.mar ubuntu@remote ip:/home/ubuntu/sem-pcyc/model-store
