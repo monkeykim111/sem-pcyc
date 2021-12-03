@@ -19,7 +19,6 @@ jobs:
           password: ${{ secrets.REMOTE_SSH_PASSWORD }}
           port: ${{ secrets.REMOTE_SSH_PORT }}
           script: |
-            # source activate pytorch_p36
             cd /home/ubuntu/projects_jonathan
             pwd
             # sem_pcyc.mar의 버전 확인할 것
