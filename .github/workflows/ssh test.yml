@@ -3,7 +3,6 @@ on: workflow_dispatch
 jobs:
 
   build:
-    name: Build
     runs-on: ubuntu-latest
     steps:
     - name: SSH Remote Commands
@@ -14,5 +13,4 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
 #         timeout: 1200s
-#         command_timeout: 20m
-        script: whoami
+        script: ls -al
