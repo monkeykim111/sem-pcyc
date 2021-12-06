@@ -5,23 +5,37 @@ on:
   workflow_dispatch:
 
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    name: new model register
-    runs-on: ubuntu-latest
 
+  build:
+    name: Build
+    runs-on: ubuntu-latest
     steps:
-      - name: torchserve start
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.REMOTE_IP }}
-          username: ${{ secrets.REMOTE_ID }}
-          password: ${{ secrets.REMOTE_PASSWORD }}
-          port: ${{ secrets.REMOTE_PORT }}
-          script: |
-            whoami
-            cd /home/ubuntu/projects_jonathan
-            pwd
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: whoami
+
+#   # This workflow contains a single job called "build"
+#   build:
+#     name: new model register
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: torchserve start
+#         uses: appleboy/ssh-action@master
+#         with:
+#           host: ${{ secrets.REMOTE_IP }}
+#           username: ${{ secrets.REMOTE_ID }}
+#           password: ${{ secrets.REMOTE_PASSWORD }}
+#           port: ${{ secrets.REMOTE_PORT }}
+#           script: |
+#             whoami
+#             cd /home/ubuntu/projects_jonathan
+#             pwd
             # sem_pcyc.mar의 버전 확인할 것
 #            torchserve --ts-config ./ts/config.properties --foreground --start --model-store ./model-store --models sem_pcyc=sem_pcyc3.0.mar
       
