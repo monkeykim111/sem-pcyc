@@ -14,10 +14,10 @@ jobs:
       - name: torchserve start
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.REMOTE_SSH_IP }}
-          username: ${{ secrets.REMOTE_SSH_ID }}
-          password: ${{ secrets.REMOTE_SSH_PASSWORD }}
-          port: ${{ secrets.REMOTE_SSH_PORT }}
+          host: ${{ secrets.REMOTE_IP }}
+          username: ${{ secrets.REMOTE_ID }}
+          password: ${{ secrets.REMOTE_PASSWORD }}
+          port: ${{ secrets.REMOTE_PORT }}
           script: |
             whoami
             cd /home/ubuntu/projects_jonathan
