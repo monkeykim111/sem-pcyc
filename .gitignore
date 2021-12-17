@@ -1,2 +1,7 @@
 *.pth
 .idea
+/acc_im_em.npy
+/GoogleNews-vectors-negative300.bin
+/new_plus_words.npy
+/sem_pcyc3.0.mar
+/intersection.tar
